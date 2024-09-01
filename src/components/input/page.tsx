@@ -1,12 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import "./style.scss";
+import axios from "axios";
 type Props = {};
 
 function InputView({}: Props) {
   const [url, seturl] = useState("");
   function getURL() {
     console.log(url);
+    axios.post(`${process.env.NEXT_PUBLIC_BASE_URI}/api`, {
+      long: url,
+      short: "test",
+    });
     seturl("");
   }
   return (
