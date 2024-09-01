@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.InputView {
+    margin: 0 auto;
+    margin-top: 30svh;
+
+    .logo {
+        color: white;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-size: 5rem;
+    }
+
+    .input {
+        border: 1px solid #565656;
+
+        input {
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            text-transform: capitalize;
+            transition: 200ms linear;
+
+            &:hover {
+                background-color: #565656;
+            }
+        }
+    }
+}
