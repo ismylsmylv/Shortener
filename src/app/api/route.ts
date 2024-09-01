@@ -1,4 +1,4 @@
-import { MongoClient, ServerApiVersion } from "mongodb";
+import { MongoClient, ServerApiVersion, ObjectId } from "mongodb";
 import connect from "@/utils/startMongo";
 
 const uri = process.env.MONGODB_URI;
@@ -16,9 +16,26 @@ const client = new MongoClient(uri, {
 
 export async function GET(request: Request) {
   const client = await connect;
-  const cursor = await client.db("links").collection("urls").find();
-  const greetings = await cursor.toArray();
-  return Response.json(greetings);
+  const url = new URL(request.url);
+  const shortKey = url.searchParams.get("id");
+
+  if (shortKey) {
+    const document = await client
+      .db("links")
+      .collection("urls")
+      .findOne({ short: shortKey });
+    if (document) {
+      return new Response(JSON.stringify(document), { status: 200 });
+    } else {
+      return new Response(JSON.stringify({ error: "Document not found" }), {
+        status: 404,
+      });
+    }
+  } else {
+    return new Response(JSON.stringify({ error: "Short key is required" }), {
+      status: 400,
+    });
+  }
 }
 
 export async function POST(request: Request) {
