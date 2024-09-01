@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaChevronRight } from "react-icons/fa6";
 import "./style.scss";
+import Loader from "@/components/loader/page";
 type Props = {
   params: { url: string };
 };
@@ -20,18 +21,24 @@ function ResultView({ params }: Props) {
   return (
     <div className="ResultView  flex justify-center items-center flex-col">
       <Logo />
-      <div className="info">
-        <h1>You&apos;ll be redirected to</h1>
-        <p>{url}</p>
-      </div>
-      <button
-        className="flex gap-2 items-center justify-center rounded"
-        onClick={() => {
-          window.open(url, "_blank");
-        }}
-      >
-        proceed <FaChevronRight />
-      </button>
+      {url ? (
+        <>
+          <div className="info">
+            <h1>You&apos;ll be redirected to</h1>
+            <p>{url}</p>
+          </div>
+          <button
+            className="flex gap-2 items-center justify-center rounded"
+            onClick={() => {
+              window.open(url, "_blank");
+            }}
+          >
+            proceed <FaChevronRight />
+          </button>
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }
