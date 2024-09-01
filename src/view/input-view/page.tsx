@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./style.scss";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Logo from "@/components/logo/page";
 type Props = {};
 
 function InputView({}: Props) {
@@ -24,7 +25,7 @@ function InputView({}: Props) {
   }
   return (
     <div className="InputView flex justify-center items-center flex-col	">
-      <div className="logo">shortener</div>
+      <Logo />
       <form
         className="input flex justify-center items-center  rounded"
         action={getURL}
