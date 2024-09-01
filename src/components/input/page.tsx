@@ -13,7 +13,7 @@ function InputView({}: Props) {
     <div className="InputView flex justify-center items-center flex-col	">
       <div className="logo">shortener</div>
       <form
-        className="input flex justify-center items-center gap-5 rounded"
+        className="input flex justify-center items-center  rounded"
         action={getURL}
       >
         <input
