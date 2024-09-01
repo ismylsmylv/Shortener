@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import "./style.scss";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+
 import Logo from "@/components/logo/page";
+import { generateUniqueId } from "@/utils/generator";
 type Props = {};
 
 function InputView({}: Props) {
@@ -11,7 +12,7 @@ function InputView({}: Props) {
   const [shortUrl, setShortUrl] = useState("");
   function getURL() {
     console.log(url);
-    const id = uuidv4();
+    const id = generateUniqueId();
     axios
       .post(`${process.env.NEXT_PUBLIC_BASE_URI}/api`, {
         long: url,
