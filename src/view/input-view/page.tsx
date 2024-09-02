@@ -47,7 +47,7 @@ function InputView({}: Props) {
       {shortUrl && (
         <div className="resultContainer">
           <h1>Shortened Url:</h1>
-          <div className="result flex items-center justify-center gap-2 my-2">
+          <div className="result  flex items-center justify-center gap-2 my-2 flex-wrap">
             <p> {shortUrl}</p>
 
             <button
