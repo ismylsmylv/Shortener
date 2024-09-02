@@ -19,7 +19,7 @@ function ResultView({ params }: Props) {
     console.log(process.env.NEXT_PUBLIC_BASE_URI + "/api?id=" + params.url);
   }, []);
   return (
-    <div className="ResultView  flex justify-center items-center flex-col">
+    <div className="ResultView  flex justify-center items-center flex-col container">
       <Logo />
       {url ? (
         <>

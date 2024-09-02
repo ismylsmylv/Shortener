@@ -25,7 +25,7 @@ function InputView({}: Props) {
     seturl("");
   }
   return (
-    <div className="InputView flex justify-center items-center flex-col	">
+    <div className="InputView flex justify-center items-center flex-col container	">
       <Logo />
       <form
         className="input flex justify-center items-center  rounded"
