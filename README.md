@@ -1,7 +1,3 @@
-Here's a sample `README.md` text for your URL shortener project:  
-
----
-
 # URL Shortener  
 
 A modern URL shortener application built with **Next.js**, **TypeScript**, **MongoDB**, and **Next.js API routes**.  
