@@ -72,7 +72,7 @@ npm start
 ```json
 {
   "long": "https://example.com",
-  "short": "NEXT_PUBLIC_BASE_URI + id" // (optional)
+  "short": "NEXT_PUBLIC_BASE_URI + id" 
 }
 ```  
 
